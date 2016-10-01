@@ -1,9 +1,28 @@
 {% extends 'base.jinja2' %}
 {% block content %}
-You opened {{ pull_requests|length }} Pull Requests until now!
-<ul>
-{% for pr in pull_requests %}
-<a href="{{ pr.url }}">{{ pr.title }}</a> at <a href="{{ pr.repo_url }}">{{ pr.repo_owner }}/{{ pr.repo_name }}</a>
-{% endfor %}
-</ul>
+{% set pr_count = pull_requests|length %}
+<h2>You opened {{ pr_count }} Pull Request{{'s' if pr_count > 1}} out of 4!</h2>
+<div class="progress">
+  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ pr_count }}" aria-valuemin="0" aria-valuemax="4" style="width: {{ pr_count }}0%;">
+    {{ pr_count }}
+  </div>
+</div>
+{% if pr_count == 4 %}
+<h3>Congratulations, you're done!</h3>
+<p>Feel free to create more Pull Requests and help more projects.</p>
+{% endif %}
+{% if pr_count != 0 %}
+<table class="table table-striped">
+  <thead><tr>
+    <td>#</td><td>Title</td><td>Repo</td>
+  </tr></thead>
+  <tbody>
+    {% for pr in pull_requests %}
+    <td>{{ loop.index }}</td>
+    <td><a href="{{ pr.url }}">{{ pr.title }}</a></td>
+    <td><a href="{{ pr.repo_url }}">{{ pr.repo_owner }}/{{ pr.repo_name }}</a></td>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
 {% endblock %}
