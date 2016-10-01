@@ -64,9 +64,10 @@ def progress():
         'filter': 'created',
         'state': 'all',
         'since': '2016-10-01T00:00:01Z'
-    }).json()
-    if not r:
+    })
+    if r.status_code != 200:
         return render_template('error.jinja2', response=r)
+    r = r.json()
     # check for errors
     pull_requests = []
     for issue_or_pr in r:
