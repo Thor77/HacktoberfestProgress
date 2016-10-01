@@ -1,4 +1,10 @@
 {% extends 'base.jinja2' %}
 {% block content %}
-<a href="{{ auth_url }}">Authorize</a>
+<div class="jumbotron">
+  <p class="lead">
+    Keep track of your progress on <a href="https://hacktoberfest.digitalocean.com">Hacktoberfest</a>
+  </p>
+  <p>Click the button below to authorize the app to view your public issues.</p>
+  <p><a class="btn btn-lg btn-success" href="{{ auth_url }}" role="button">Authorize</a></p>
+</div>
 {% endblock %}
