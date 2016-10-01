@@ -23,7 +23,6 @@ PullRequest = namedtuple('PullRequest', [
 
 @app.route('/')
 def index():
-    session['bla'] = 'blub'
     return render_template('index.jinja2', auth_url=auth_url)
 
 
