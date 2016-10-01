@@ -28,6 +28,8 @@ def index():
 
 @app.route('/auth')
 def auth():
+    if 'access_token' in session:
+        return redirect('/progress')
     if request.args.get('error'):
         return render_template('error.jinja2',
                                error_code=request.args['error'],
