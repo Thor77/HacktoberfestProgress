@@ -4,6 +4,7 @@ from collections import namedtuple
 from flask.ext.session import Session
 
 app = Flask(__name__)
+app.config.from_pyfile('config.py')
 
 sess = Session(app)
 
@@ -86,9 +87,5 @@ def progress():
     return render_template('progress.jinja2', pull_requests=pull_requests)
 
 if __name__ == '__main__':
-    # CHANGE SECRET_KEY!
-    app.secret_key = 'N{5K$:6}6>!Y$BxKYBl9gA"*W5&(0X;Xo[Gh)%?Ci@l!EHL]$j4%:Bsv'
-    app.config['SESSION_TYPE'] = 'filesystem'
-
     sess.init_app(app)
-    app.run(host='127.0.0.1', port=7777, debug=True)
+    app.run(host='127.0.0.1', port=7777)
