@@ -7,8 +7,6 @@ app = Flask(__name__)
 
 sess = Session(app)
 
-app = Flask(__name__)
-
 client_id = ''
 client_secret = ''
 
