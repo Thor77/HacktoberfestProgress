@@ -8,8 +8,8 @@ app.config.from_pyfile('config.py')
 
 Session(app)  # set up server-side sessions
 
-client_id = ''
-client_secret = ''
+client_id = app.config.get('GITHUB_CLIENT_ID')
+client_secret = app.config.get('GITHUB_CLIENT_SECRET')
 
 api_base = 'https://api.github.com'
 
