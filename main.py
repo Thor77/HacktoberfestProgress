@@ -6,7 +6,7 @@ from flask.ext.session import Session
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
-sess = Session(app)
+Session(app)  # set up server-side sessions
 
 client_id = ''
 client_secret = ''
@@ -87,5 +87,4 @@ def progress():
     return render_template('progress.jinja2', pull_requests=pull_requests)
 
 if __name__ == '__main__':
-    sess.init_app(app)
     app.run(host='127.0.0.1', port=7777)
