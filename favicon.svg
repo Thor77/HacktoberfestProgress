@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="18.871321mm"
+   height="26.218445mm"
+   viewBox="0 0 66.866884 92.900001"
+   id="svg3425"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="favicon.svg">
+  <defs
+     id="defs3427" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="45.563181"
+     inkscape:cy="60.057298"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1025"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata3430">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-502.50723,-511.01245)">
+    <g
+       transform="translate(502.60412,509.97245)"
+       id="_Group_10"
+       data-name="&lt;Group&gt;"
+       style="fill:#ce873d;fill-opacity:1">
+      <g
+         id="_Group_11"
+         data-name="&lt;Group&gt;"
+         style="fill:#ce873d;fill-opacity:1">
+        <polygon
+           id="_Path_6"
+           data-name="&lt;Path&gt;"
+           class="cls-1"
+           points="40.64,30 26.2,44.45 26.2,24.27 26.2,9.75 17.49,1.04 17.45,1.08 17.42,1.04 0,18.46 2.98,21.43 11.68,12.73 14.59,15.63 14.59,88.14 20.39,93.94 26.2,88.14 26.2,56.95 40.64,42.51 40.64,67.81 40.64,82.33 52.26,93.94 58.06,88.14 60.97,85.23 66.77,79.43 63.87,76.52 58.06,82.33 58.06,82.33 52.26,76.52 52.26,67.81 52.26,24.27 52.26,12.65 52.26,9.75 43.55,1.04 34.84,9.75 40.64,15.56 "
+           style="fill:#ce873d;fill-opacity:1" />
+      </g>
+    </g>
+    <rect
+       style="fill:#f6a33b;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect4783"
+       width="62.5"
+       height="11.071428"
+       x="503.00735"
+       y="570.33142"
+       ry="5.5357141" />
+    <rect
+       style="fill:#ffff9f;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect4783-4"
+       width="21.339285"
+       height="11.071411"
+       x="503.00723"
+       y="570.33099"
+       ry="5.5357056" />
+  </g>
+</svg>
