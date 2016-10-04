@@ -18,9 +18,11 @@
   </tr></thead>
   <tbody>
     {% for pr in pull_requests %}
-    <td>{{ loop.index }}</td>
-    <td><a href="{{ pr.url }}">{{ pr.title }}</a></td>
-    <td><a href="{{ pr.repo_url }}">{{ pr.repo_owner }}/{{ pr.repo_name }}</a></td>
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td><a href="{{ pr.url }}">{{ pr.title }}</a></td>
+      <td><a href="{{ pr.repo_url }}">{{ pr.repo_owner }}/{{ pr.repo_name }}</a></td>
+    </tr>
     {% endfor %}
   </tbody>
 </table>
