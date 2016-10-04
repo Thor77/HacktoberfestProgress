@@ -1,9 +1,9 @@
 {% extends 'base.jinja2' %}
 {% block content %}
 {% set pr_count = pull_requests|length %}
-<h2>You opened {{ pr_count }} Pull Request{{'s' if pr_count > 1 or pr_count == 0 }} out of 4!</h2>
+<h2>You opened {{ pr_count }} Pull Request{{'s' if pr_count != 1 }} out of 4!</h2>
 <div class="progress">
-  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ pr_count }}" aria-valuemin="0" aria-valuemax="4" style="width: {% if pr_count > 4 %}100{% else %}{{ (pr_count * 25) }}{% endif %}%;">
+  <div class="progress-bar progress-bar-{% if pr_count >= 4 %}success{% else %}warning{% endif %}" role="progressbar" aria-valuenow="{{ pr_count }}" aria-valuemin="0" aria-valuemax="4" style="width: {% if pr_count > 4 %}100{% else %}{{ (pr_count * 25) }}{% endif %}%;">
     {{ pr_count }}
   </div>
 </div>
