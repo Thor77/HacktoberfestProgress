@@ -57,9 +57,12 @@ def authenticated_request(url, token, complete=False):
     if not complete:
         url = api_base + url
     r = requests.get(url, headers=headers(token))
+    data = r.json()
     if r.status_code != 200:
-        return {}
-    return r.json()
+        raise GitHubAPIException(
+            message=data['message']
+        )
+    return data
 
 
 def fetch_pull_requests(token, username):
