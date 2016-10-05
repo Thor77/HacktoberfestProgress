@@ -5,7 +5,7 @@
     An error occured
   </p>
   <p>{{ description }}</p>
-  <p><small>code: <code>{{ code }}</code></small></p>
+  {% if code %}<p><small>code: <code>{{ code }}</code></small></p>{% endif %}
   <p>If you think, this is an error of the application, please open an Issue and provide as much information as possible.</p>
   {% set issue_body = 'Code: ' + code + '\nDescription: ' + description + '\nURL: ' + url %}
   <p><a class="btn btn-lg btn-danger" href="https://github.com/Thor77/HacktoberfestProgress/issues/new?body={{ issue_body|urlencode }}" role="button" target="_blank" rel="noopener noreferrer">New Issue</a></p>
