@@ -1,5 +1,12 @@
 {% extends 'base.jinja2' %}
 {% block content %}
-<h1>{{ error_desc }}</h1>
-<a href="{{ error_uri }}">More info</a>
+<div class="jumbotron">
+  <p class="lead">
+    An error occured
+  </p>
+  <p>{{ description }}</p>
+  <p><small>code: <code>{{ code }}</code></small></p>
+  <p>If you think, this is an error of the application, please open an Issue and provide as much information as possible.</p>
+  <p><a class="btn btn-lg btn-danger" href="https://github.com/Thor77/HacktoberfestProgress/issues/new" role="button" target="_blank" rel="noopener noreferrer">New Issue</a></p>
+</div>
 {% endblock %}
