@@ -1,6 +1,7 @@
-import requests
-from flask import Flask, render_template, request, redirect, session
 from collections import namedtuple
+
+import requests
+from flask import Flask, redirect, render_template, request, session
 from flask.ext.session import Session
 
 app = Flask(__name__)
