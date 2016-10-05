@@ -83,6 +83,17 @@ def fetch_pull_requests(token, username):
     return r.json()['items']
 
 
+@app.errorhandler(GitHubAPIException)
+def handle_error(exception):
+    '''
+    Handle erorr-responses from the GitHub-API
+    '''
+    return render_template(
+        'error.jinja2', description=exception.message, url=exception.url,
+        code=exception.code
+    )
+
+
 @app.route('/')
 def index():
     if 'access_token' in session:
