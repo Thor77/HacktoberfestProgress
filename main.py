@@ -44,16 +44,6 @@ def authenticated_request(url, token):
     return r.json()
 
 
-def fetch_login(token):
-    '''
-    Fetch login-name for user authenticated by `token`
-    '''
-    r = requests.get(api_base + '/user', headers=headers(token))
-    if r.status_code != 200:
-        return None
-    return r.json()['login']
-
-
 def fetch_pull_requests(token, username):
     '''
     Fetch pull requests for `username`, authenticated by `token`
@@ -116,7 +106,7 @@ def progress():
         return redirect('/')
     access_token = session.get('access_token')
     # obtain username
-    username = fetch_login(access_token)
+    username = authenticated_request('/user', access_token)['login']
     raw_pull_requests = fetch_pull_requests(access_token, username)
 
     pull_requests = []
