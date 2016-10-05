@@ -24,6 +24,13 @@ PullRequest = namedtuple('PullRequest', [
     'url', 'title', 'repo_url', 'repo_name', 'repo_owner'])
 
 
+class GitHubAPIException(Exception):
+    def __init__(self, message, code=None, url=None):
+        self.message = message
+        self.code = code
+        self.url = url
+
+
 def headers(token):
     '''
     Build authentication-headers with `token`
