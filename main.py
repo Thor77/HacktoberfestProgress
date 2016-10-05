@@ -34,6 +34,16 @@ def headers(token):
     }
 
 
+def authenticated_request(url, token):
+    '''
+    Request `url` authenticated by `token`
+    '''
+    r = requests.get(api_base + url, headers=headers(token))
+    if r.status_code != 200:
+        return {}
+    return r.json()
+
+
 def fetch_login(token):
     '''
     Fetch login-name for user authenticated by `token`
