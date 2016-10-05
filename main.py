@@ -107,10 +107,11 @@ def auth():
     if 'access_token' in session:
         return redirect('/progress')
     if request.args.get('error'):
-        return render_template('error.jinja2',
-                               error_code=request.args['error'],
-                               error_desc=request.args['error_description'],
-                               error_uri=request.args['error_uri'])
+        raise GitHubAPIException(
+            message=request.args.get('error_description'),
+            code=request.args.get('error'),
+            url=request.args.get('error_uri')
+        )
     elif request.args.get('code'):
         # obtain access_token
         payload = {
