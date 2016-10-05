@@ -81,9 +81,12 @@ def fetch_pull_requests(token, username):
     prepared.url = prepared.url.replace('QUERY', search_query.format(username))
     # send request
     r = requests.Session().send(prepared)
+    data = r.json()
     if r.status_code != 200:
-        return []
-    return r.json()['items']
+        raise GitHubAPIException(
+            message=data['message']
+        )
+    return data['items']
 
 
 @app.errorhandler(GitHubAPIException)
