@@ -123,15 +123,10 @@ def progress():
     pull_requests = []
     for pr in raw_pull_requests:
         # fetch details about pull request
-        details_r = requests.get(pr['url'])
-        if details_r.status_code != 200:
-            return render_template('error.jinja2')
-        details = details_r.json()
+        details = authenticated_request(pr['url'], access_token, complete=True)
         # fetch details about repo
-        repo_r = requests.get(details['repository_url'])
-        if repo_r.status_code != 200:
-            return render_template('error.jinja2')
-        repo = repo_r.json()
+        repo = authenticated_request(details['repository_url'], access_token,
+                                     complete=True)
         pull_requests.append(
             PullRequest(
                 url=pr['html_url'], title=pr['title'],
