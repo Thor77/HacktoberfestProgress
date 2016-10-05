@@ -34,11 +34,22 @@ def headers(token):
     }
 
 
-def authenticated_request(url, token):
+def authenticated_request(url, token, complete=False):
     '''
     Request `url` authenticated by `token`
+
+    :param url: url/endpoint for the request
+    :type url: str
+
+    :param token: auth-token used for the request
+    :type token: str
+
+    :param complete: whether the given url is already complete
+    :type complete: bool
     '''
-    r = requests.get(api_base + url, headers=headers(token))
+    if not complete:
+        url = api_base + url
+    r = requests.get(url, headers=headers(token))
     if r.status_code != 200:
         return {}
     return r.json()
