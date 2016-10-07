@@ -97,7 +97,7 @@ def handle_error(exception):
     return render_template(
         'error.jinja2', description=exception.message, url=exception.url,
         code=exception.code
-    )
+    ), 500
 
 
 @app.route('/')
