@@ -7,7 +7,7 @@
   <p>{{ description }}</p>
   {% if code %}<p><small>code: <code>{{ code }}</code></small></p>{% endif %}
   <p>If you think, this is an error of the application, please open an Issue and provide as much information as possible.</p>
-  {% set issue_body = 'Code: ' + code + '\nDescription: ' + description + '\nURL: ' + url %}
+  {% set issue_body = 'Code: ' + code|default('Not given', true) + '\nDescription: ' + description|default('Not given', true) + '\nURL: ' + url|default('Not given', true) %}
   <p><a class="btn btn-lg btn-danger" href="https://github.com/Thor77/HacktoberfestProgress/issues/new?body={{ issue_body|urlencode }}" role="button" target="_blank" rel="noopener noreferrer">New Issue</a></p>
 </div>
 {% endblock %}
