@@ -2,7 +2,7 @@ from collections import namedtuple
 
 import requests
 from flask import Flask, redirect, render_template, request, session
-from flask.ext.session import Session
+from flask_session import Session
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
