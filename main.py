@@ -162,5 +162,6 @@ def progress():
         )
     return render_template('progress.jinja2', pull_requests=pull_requests)
 
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=7777)
