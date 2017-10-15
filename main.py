@@ -14,8 +14,8 @@ client_secret = app.config.get('GITHUB_CLIENT_SECRET')
 
 api_base = 'https://api.github.com'
 
-auth_url = 'https://github.com/login/oauth/authorize'\
-    '?client_id={}'.format(client_id)
+auth_url = f'https://github.com/login/oauth/authorize'\
+    '?client_id={client_id}'
 
 time_range = '2017-10-01T00:00:01Z..2017-10-31T23:59:59'
 search_query = 'type:pr+created:' + time_range + '+author:{}'
@@ -36,7 +36,7 @@ def headers(token):
     Build authentication-headers with `token`
     '''
     return {
-        'Authorization': 'token {}'.format(token),
+        'Authorization': f'token {token}',
         'User-Agent': 'HacktoberfestProgress/Thor77'
     }
 
