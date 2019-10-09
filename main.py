@@ -18,9 +18,7 @@ api_base = 'https://api.github.com'
 auth_url = 'https://github.com/login/oauth/authorize' \
            '?client_id={}'.format(client_id)
 
-year = str(datetime.datetime.now().year)
-
-time_range = year + '-10-01T00:00:01Z..' + year + '-10-31T23:59:59'
+time_range = '{year}-10-01T00:00:01Z..{year}-10-31T23:59:59'..format(year=datetime.datetime.now().year)
 search_query = 'type:pr+created:' + time_range + '+author:{}'
 
 PullRequest = namedtuple('PullRequest', [
